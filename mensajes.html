@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mensajes | LFMUN</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <img src="logo/logo-principal.jpg" alt="Logo LFMUN" />
+        <span>LFMUN</span>
+      </a>
+      <button class="menu-toggle" type="button">Menú</button>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="comites.html">Comités</a>
+        <a href="registro.html">Registro</a>
+        <a class="active" href="mensajes.html">Mensajes</a>
+        <a href="archivos.html">Archivos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Mensajes y dudas</h2>
+        <p>Envía tus preguntas directamente al equipo de LFMUN2026.</p>
+        <div class="grid" style="margin-top: 1.5rem;">
+          <div class="card">
+            <form class="form">
+              <label>
+                Nombre completo
+                <input type="text" name="nombre" placeholder="Tu nombre" />
+              </label>
+              <label>
+                Correo
+                <input type="email" name="correo" placeholder="tucorreo@email.com" />
+              </label>
+              <label>
+                Tipo de consulta
+                <select name="tipo">
+                  <option>Registro</option>
+                  <option>Comités</option>
+                  <option>Logística</option>
+                  <option>Prensa</option>
+                  <option>Académico</option>
+                  <option>Otro</option>
+                </select>
+              </label>
+              <label>
+                Dirigido a
+                <select name="dirigido" id="dirigido-select">
+                  <option value="ayluardopanisd@gmail.com">Diego Ayluardo Pardis — ayluardopanisd@gmail.com</option>
+                  <option value="martinoli.chiara@lfm.edu.mx">Chiara Martinoli Chevalier — martinoli.chiara@lfm.edu.mx</option>
+                  <option value="dubois.dunia@lfm.edu.mx">Dunia Juliette Dubois — dubois.dunia@lfm.edu.mx</option>
+                  <option value="emiliano.rosas.hdz@gmail.com">Emiliano Rosas Hernandez — emiliano.rosas.hdz@gmail.com</option>
+                  <option value="legolu.uo@gmail.com">Lucia Coco Anzo Legorreta — legolu.uo@gmail.com</option>
+                  <option value="nava.mateo@lfm.edu.mx">Mateo Nava Rivera — nava.mateo@lfm.edu.mx</option>
+                  <option value="jalet.mestli@lfm.edu.mx">Mestli Jalet Torres — jalet.mestli@lfm.edu.mx</option>
+                  <option value="rubmgs@gmail.com">Ruben Mauricio Aragon Perez — rubmgs@gmail.com</option>
+                  <option value="tamm.cohen@gmail.com">Tamara Cohen Ramirez — tamm.cohen@gmail.com</option>
+                  <option value="taniadavalosrios@gmail.com">Tania Xanath Davalos Rios — taniadavalosrios@gmail.com</option>
+                  <option value="zoemagana003@gmail.com">Zoe Magaña Massart — zoemagana003@gmail.com</option>
+                  <option value="miguel.angel.rodriguez.navarro26@gmail.com">Miguel Angel Rodriguez Navarro — miguel.angel.rodriguez.navarro26@gmail.com</option>
+                </select>
+              </label>
+              <label>
+                Mensaje
+                <textarea rows="6" name="mensaje" placeholder="Escribe tu duda aquí"></textarea>
+              </label>
+              <button class="btn primary" type="button" id="enviar-mailto">Enviar por correo</button>
+            </form>
+          </div>
+          <div class="card wide">
+            <h3>Directorio de contactos</h3>
+            <ul class="list">
+              <li><a href="mailto:ayluardopanisd@gmail.com">Diego Ayluardo Pardis — Alto Secretariado — ayluardopanisd@gmail.com</a></li>
+              <li><a href="mailto:jalet.mestli@lfm.edu.mx">Mestli Jalet Torres — Alto Secretariado — jalet.mestli@lfm.edu.mx</a></li>
+              <li><a href="mailto:nava.mateo@lfm.edu.mx">Mateo Nava Rivera — Alto Secretariado — nava.mateo@lfm.edu.mx</a></li>
+              <li><a href="mailto:taniadavalosrios@gmail.com">Tania Xanath Davalos Rios — Logística y finanzas — taniadavalosrios@gmail.com</a></li>
+              <li><a href="mailto:chiara.martinoli@yahoo.com">Chiara Martinoli Chevalier — Prensa — chiara.martinoli@yahoo.com</a></li>
+              <li><a href="mailto:dubois.dunia@lfm.edu.mx">Dunia Juliette Dubois — Secretaría académica — dubois.dunia@lfm.edu.mx</a></li>
+              <li><a href="mailto:emiliano.rosas.hdz@gmail.com">Emiliano Rosas Hernandez — Secretaría académica — emiliano.rosas.hdz@gmail.com</a></li>
+              <li><a href="mailto:legolu.uo@gmail.com">Lucia Coco Anzo Legorreta — Secretaría académica — legolu.uo@gmail.com</a></li>
+              <li><a href="mailto:rubmgs@gmail.com">Ruben Mauricio Aragon Perez — Secretaría académica — rubmgs@gmail.com</a></li>
+              <li><a href="mailto:tamm.cohen@gmail.com">Tamara Cohen Ramirez — Secretaría académica — tamm.cohen@gmail.com</a></li>
+              <li><a href="mailto:zoemagana003@gmail.com">Zoe Magaña Massart — Secretaría académica — zoemagana003@gmail.com</a></li>
+              <li><a href="mailto:miguel.angel.rodriguez.navarro26@gmail.com">Miguel Angel Rodriguez Navarro — Secretaría académica — miguel.angel.rodriguez.navarro26@gmail.com</a></li>
+            </ul>
+            <div class="placeholder-box" style="min-height: 140px; margin-top: 1rem;">Sección de preguntas frecuentes (pendiente).</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Responderemos lo más pronto posible en horario laboral.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

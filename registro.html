@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro | LFMUN</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <img src="logo/logo-principal.jpg" alt="Logo LFMUN" />
+        <span>LFMUN</span>
+      </a>
+      <button class="menu-toggle" type="button">Menú</button>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="comites.html">Comités</a>
+        <a class="active" href="registro.html">Registro</a>
+        <a href="mensajes.html">Mensajes</a>
+        <a href="archivos.html">Archivos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Registro</h2>
+        <p>Formulario oficial de registro. La integracion con Google Sheets se realizara en el backend.</p>
+        <form class="form form-registro" data-registro-form method="post" enctype="multipart/form-data">
+          <fieldset class="form-section">
+            <legend>Parte 1: Datos generales</legend>
+            <div class="form-grid">
+              <label>
+                Nombres
+                <input type="text" name="nombres" placeholder="Nombre completo" required />
+              </label>
+              <label>
+                Apellidos
+                <input type="text" name="apellidos" placeholder="Apellidos" required />
+              </label>
+              <label>
+                Telefono
+                <input type="tel" name="telefono" placeholder="(000) 000-0000" required />
+              </label>
+              <label>
+                Correo electronico
+                <input type="email" name="correo" placeholder="correo@ejemplo.com" required />
+              </label>
+              <label>
+                Escuela de procedencia
+                <input type="text" name="escuela_procedencia" placeholder="Nombre de la escuela" required />
+              </label>
+              <label>
+                Edad
+                <input type="number" name="edad" min="10" max="99" placeholder="Pon tu edad" required />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section" data-step="tipo">
+            <legend>Parte 2: Tipo de participante</legend>
+            <label>
+              Tipo de participante
+              <select name="tipo_participante" required>
+                <option value="">Selecciona</option>
+                <option value="interno">Interno</option>
+                <option value="externo">Externo</option>
+              </select>
+            </label>
+            <div class="form-grid" data-scope="interno">
+              <label>
+                Salon
+                <input type="text" name="salon" placeholder="Salon" />
+              </label>
+              <label>
+                CI
+                <select name="ci">
+                  <option value="">Selecciona</option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </label>
+            </div>
+            <div class="form-grid" data-scope="externo">
+              <label>
+                Escuela (solo externos)
+                <input type="text" name="escuela_externo" placeholder="Escuela" />
+              </label>
+              <label>
+                Grado
+                <input type="text" name="grado" placeholder="Grado" />
+              </label>
+              <label>
+                Faculty
+                <input type="text" name="faculty" placeholder="Faculty" />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section is-hidden" data-step="comite-1">
+            <legend>Parte 3: Primera opcion de comite</legend>
+            <label>
+              Primera opcion de comite
+              <select name="comite_1" required>
+                <option value="">Selecciona un comite</option>
+                <option value="Fondo de las Naciones Unidas para la Infancia Comite en Espanol">Fondo de las Naciones Unidas para la Infancia Comite en Espanol</option>
+                <option value="Organizacion de las Naciones Unidas para la Educacion, la Ciencia y la Cultura Comite en Frances">Organizacion de las Naciones Unidas para la Educacion, la Ciencia y la Cultura Comite en Frances</option>
+                <option value="United Nations Environment Programme English Committee">United Nations Environment Programme English Committee</option>
+                <option value="Asamblea General Comite en Espanol">Asamblea General Comite en Espanol</option>
+                <option value="Comision de Derechos Humanos de las Naciones Unidas Comite Historico Abril 1990 en Espanol">Comision de Derechos Humanos de las Naciones Unidas Comite Historico Abril 1990 en Espanol</option>
+                <option value="Consejo de Seguridad de las Naciones Unidas Comite en Espanol">Consejo de Seguridad de las Naciones Unidas Comite en Espanol</option>
+                <option value="Consejo de Seguridad de las Naciones Unidas Comite en Espanol Segunda Opcion">Consejo de Seguridad de las Naciones Unidas Comite en Espanol Segunda Opcion</option>
+                <option value="Junta Provisional Gubernativa Comite Historico 1821">Junta Provisional Gubernativa Comite Historico 1821</option>
+              </select>
+            </label>
+            <p class="helper-text">Consulta el documento oficial: <a class="inline-doc-link" href="comites/comites-delegaciones.pdf" target="_blank" rel="noopener">PDF de comites y delegaciones</a></p>
+            <div class="form-grid">
+              <label>
+                Primera opcion de delegacion
+                <input type="text" name="delegacion_1a" placeholder="Delegacion" required />
+              </label>
+              <label>
+                Segunda opcion de delegacion
+                <input type="text" name="delegacion_1b" placeholder="Delegacion" required />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section is-hidden" data-step="comite-2">
+            <legend>Parte 4: Segunda opcion de comite</legend>
+            <label>
+              Segunda opcion de comite
+              <select name="comite_2" required>
+                <option value="">Selecciona un comite</option>
+                <option value="Fondo de las Naciones Unidas para la Infancia Comite en Espanol">Fondo de las Naciones Unidas para la Infancia Comite en Espanol</option>
+                <option value="Organizacion de las Naciones Unidas para la Educacion, la Ciencia y la Cultura Comite en Frances">Organizacion de las Naciones Unidas para la Educacion, la Ciencia y la Cultura Comite en Frances</option>
+                <option value="United Nations Environment Programme English Committee">United Nations Environment Programme English Committee</option>
+                <option value="Asamblea General Comite en Espanol">Asamblea General Comite en Espanol</option>
+                <option value="Comision de Derechos Humanos de las Naciones Unidas Comite Historico Abril 1990 en Espanol">Comision de Derechos Humanos de las Naciones Unidas Comite Historico Abril 1990 en Espanol</option>
+                <option value="Consejo de Seguridad de las Naciones Unidas Comite en Espanol">Consejo de Seguridad de las Naciones Unidas Comite en Espanol</option>
+                <option value="Consejo de Seguridad de las Naciones Unidas Comite en Espanol Segunda Opcion">Consejo de Seguridad de las Naciones Unidas Comite en Espanol Segunda Opcion</option>
+                <option value="Junta Provisional Gubernativa Comite Historico 1821">Junta Provisional Gubernativa Comite Historico 1821</option>
+              </select>
+            </label>
+            <p class="helper-text">Consulta el documento oficial: <a class="inline-doc-link" href="comites/comites-delegaciones.pdf" target="_blank" rel="noopener">PDF de comites y delegaciones</a></p>
+            <div class="form-grid">
+              <label>
+                Primera opcion de delegacion
+                <input type="text" name="delegacion_2a" placeholder="Delegacion" required />
+              </label>
+              <label>
+                Segunda opcion de delegacion
+                <input type="text" name="delegacion_2b" placeholder="Delegacion" required />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section is-hidden" data-step="pago">
+            <legend>Parte 5: Tipo de pago</legend>
+            <label>
+              Tipo de pago
+              <select name="tipo_pago" required>
+                <option value="">Selecciona</option>
+                <option id="pago-efectivo" value="efectivo">Efectivo (solo internos)</option>
+                <option value="transferencia">Transferencia (internos y externos)</option>
+              </select>
+            </label>
+            <p class="helper-text" data-payment-hint>Selecciona si eres interno o externo para habilitar las opciones de pago.</p>
+          </fieldset>
+
+          <button class="btn primary" type="submit">Enviar registro</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Para consultas sobre registro, utiliza la sección de mensajes.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
