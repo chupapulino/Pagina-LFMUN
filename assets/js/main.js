@@ -7,26 +7,6 @@ if (toggle && navLinks) {
   });
 }
 
-const mailButton = document.querySelector("#enviar-mailto");
-const dirigidoSelect = document.querySelector("#dirigido-select");
-
-if (mailButton && dirigidoSelect) {
-  mailButton.addEventListener("click", () => {
-    const email = dirigidoSelect.value;
-    const nombre = document.querySelector("input[name='nombre']")?.value || "";
-    const correo = document.querySelector("input[name='correo']")?.value || "";
-    const tipo = document.querySelector("select[name='tipo']")?.value || "";
-    const mensaje = document.querySelector("textarea[name='mensaje']")?.value || "";
-
-    const subject = encodeURIComponent(`Consulta LFMUN2026 - ${tipo}`);
-    const body = encodeURIComponent(
-      `Nombre: ${nombre}\nCorreo: ${correo}\nTipo: ${tipo}\n\nMensaje:\n${mensaje}`
-    );
-
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-  });
-}
-
 const registroForm = document.querySelector("[data-registro-form]");
 
 if (registroForm) {
@@ -98,6 +78,53 @@ if (registroForm) {
   });
 
   updateTipo();
+
+  // Enviar datos a Google Sheets
+  registroForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(registroForm);
+    const googleScriptUrl = "https://script.google.com/macros/s/AKfycbwKfKmqHiSftXdfMnMiu1yscLddhFwWaBLKjFDRSjAXrRISP0jo51YO13Lh868wgqM/exec";
+
+    try {
+      // Usar iframe para evitar problemas de CORS
+      let iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.name = 'gform_iframe';
+      document.body.appendChild(iframe);
+
+      let form = document.createElement('form');
+      form.action = googleScriptUrl;
+      form.method = 'POST';
+      form.target = 'gform_iframe';
+      form.style.display = 'none';
+
+      // Copiar datos del formulario al nuevo form
+      for (let [key, value] of formData.entries()) {
+        let input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
+      }
+
+      document.body.appendChild(form);
+      form.submit();
+
+      // Limpiar después de 2 segundos
+      setTimeout(() => {
+        form.remove();
+        iframe.remove();
+        alert("¡Registro enviado exitosamente! Te contactaremos pronto.");
+        registroForm.reset();
+        updateTipo();
+      }, 2000);
+
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error al enviar el registro. Por favor, intenta de nuevo.");
+    }
+  });
 }
 
 const galleryRoot = document.querySelector("[data-gallery-root]");
